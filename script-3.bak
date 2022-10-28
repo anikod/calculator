@@ -1,0 +1,102 @@
+'use strict';
+
+const domOutput = document.querySelector('.output');
+const domVarPrevious = document.querySelector('.previous-1');
+// const previous-2 = document.querySelector('.previous-2');
+const domOperation = document.querySelector('.operation');
+const domKeyboard = document.querySelector('.keyboard');
+
+let previousVal = '';
+// let previous-
+let currentVal = '';
+let currentOp = '';
+
+keyboard.addEventListener('click', (evt) => {
+  let buttonPressedValue = evt.target.innerText;
+
+  switch (buttonPressedValue) {
+    case 'C':
+      break;
+
+    case 'CE':
+      break;
+
+    case '+':
+      if (currentOp === '+') {
+        previousVal += +currentVal;
+        output.innerText = previousVal;
+        // currentOp = '';
+        // document.querySelector('.')
+        result.innerText = previousVal;
+        currentVal = '';
+        output.innerText = 0;
+      } else {
+        operation.innerText = '+';
+        currentOp = '+';
+        // result
+        previousVal = +currentVal;
+        result.innerText = previousVal;
+        currentVal = '';
+        output.innerText = 0;
+      }
+      break;
+
+    case '-':
+      // operation = '-';
+      if (currentOp === '-') {
+        previousVal -= currentVal;
+        output.innerText = previousVal;
+        // currentOp = '';
+        // document.querySelector('.')
+        result.innerText = previousVal;
+        currentVal = '';
+        output.innerText = 0;
+      } else {
+        operation.innerText = '-';
+        currentOp = '-';
+        // result
+        previousVal = currentVal;
+        result.innerText = previousVal;
+        currentVal = '';
+        output.innerText = 0;
+      }
+      break;
+
+    case '=':
+      break;
+
+    default:
+      //currentVal = (buttonPressedValue.length == 1) ? 0 : currentVal + buttonPressedValue;
+      if (buttonPressedValue.length == 1) {
+        currentVal += buttonPressedValue;
+      }
+      output.innerText = currentVal;
+      break;
+  }
+
+  function calc(op) {
+    switch (op) {
+        case '-':
+          previousVal -= currentVal;
+          output = previousVal;
+        break;
+    }
+  }
+
+  //   output.innerHTML = Math.round(Math.random() * 100);
+  //   output.innerHTML = evt.target.innerText;
+  //   console.log('evt: ', evt);
+  //   console.log('evt target: ', evt.target);
+  //   console.log('evt current target: ', evt.currentTarget);
+  //   //   console.dir(evt);
+  //   console.log(
+  //     '----------------------------------------------------------------'
+});
+
+// const img = document.querySelector('img');
+// const imager = setInterval(
+//   () => (img.src = 'http://picsum.photos/100?' + new Date().getTime()),
+//   15000
+// );
+// image.src = 'http://localhost/image.jpg?' + new Date().getTime();
+// });

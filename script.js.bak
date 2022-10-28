@@ -1,0 +1,76 @@
+'use strict';
+
+const output = document.querySelector('.output');
+const result = document.querySelector('.result');
+const keyboard = document.querySelector('.keyboard');
+// let currentVal = output.innerText;
+let previousVal = 0;
+let currentVal = '';
+let currentOp = '';
+// const log = [0];
+
+keyboard.addEventListener('click', (evt) => {
+  let buttonPressedValue = evt.target.innerText;
+
+  switch (buttonPressedValue) {
+    case 'C':
+      currentVal = '';
+      output.innerHTML = 0;
+      break;
+    case 'CE':
+      currentVal = '';
+      output.innerHTML = 0;
+      result = 0;
+      break;
+    case '+':
+      // result += +currentVal;
+      previousVal += parseFloat(currentVal) | 0;
+      currentVal = '';
+      output.innerHTML = 0;
+      result.innerText = previousVal;
+      //   currentResult += currentVal;
+      //   output.innerText = currentResult;
+      break;
+    case '-':
+      if ((currentOp = '-')) {
+      }
+      previousVal = (parseFloat(currentVal) - previousVal) | 0;
+      currentVal = '';
+      output.innerHTML = 0;
+      result.innerText = previousVal;
+      break;
+    case '=':
+      result += +currentVal;
+      output.innerText = result;
+      currentVal = '';
+      break;
+    default:
+      //currentVal = (buttonPressedValue.length == 1) ? 0 : currentVal + buttonPressedValue;
+      if (buttonPressedValue.length == 1) {
+        currentVal += buttonPressedValue;
+      }
+      output.innerText = currentVal;
+      break;
+  }
+
+  function calc() {
+    swit;
+  }
+
+  //   output.innerHTML = Math.round(Math.random() * 100);
+  //   output.innerHTML = evt.target.innerText;
+  //   console.log('evt: ', evt);
+  //   console.log('evt target: ', evt.target);
+  //   console.log('evt current target: ', evt.currentTarget);
+  //   //   console.dir(evt);
+  //   console.log(
+  //     '----------------------------------------------------------------'
+});
+
+// const img = document.querySelector('img');
+// const imager = setInterval(
+//   () => (img.src = 'http://picsum.photos/100?' + new Date().getTime()),
+//   15000
+// );
+// image.src = 'http://localhost/image.jpg?' + new Date().getTime();
+// });

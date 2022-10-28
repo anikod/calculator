@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> -->
+</head>
+
+<body>
+    <!-- <div class="content"> -->
+    <div class="calc">
+
+        <div class="display">
+            <div class="minidisplay">
+                <div class="previous-1"></div>
+                <div class="operation"></div>
+                <div class="previous-2"></div>
+                <div class="result"></div>
+                <!-- <div class="equals"></div> -->
+            </div>
+            <div class="output"></div>
+        </div>
+
+        <!-- TODO: move JS code from here to JS script -->
+        <div class="keyboard" id="keyboard" onmousedown="return false" onselectstart="return false">
+    
+            <div class="keyboard__top">
+                <button>C</button>
+                <button>CE</button>
+            </div>
+
+            <div class="keyboard__wrapper">
+                <div class="keyboard__left">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button class="button-wide">0</button>
+                    <button>.</button>
+                </div>
+
+                <div class="keyboard__center">
+                    <button>+</button>
+                    <button>-</button>
+                    <button><span style="position: relative; top: 5px;">*</span></button>
+                    <button>/</button>
+                </div>
+
+                <div class="keyboard__right">
+                    <button class="button-high">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- </div> -->
+    <script src="script-4.js"></script>
+</body>
+
+</html>
