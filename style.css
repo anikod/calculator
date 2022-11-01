@@ -221,3 +221,28 @@ button {
   position: relative;
   bottom: 0;
 }
+
+.freepik {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  word-wrap: none;
+  font-size: 1rem;
+  /* background-color: brown; */
+  /* From https://css.glass */
+  /* background: rgba(0, 0, 0, 0.66); */
+  background: rgba(165, 42, 42, 0.33);
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  /* border: 1px solid rgba(255, 255, 255, 0.85); */
+  margin: 3px;
+  padding: 6px;
+}
+
+.freepik,
+.freepik a:link,
+.freepik a:visited,
+.freepik a:hover {
+  color: white;
+}
