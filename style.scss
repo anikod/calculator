@@ -1,0 +1,291 @@
+// normalize
+
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+@font-face {
+  font-family: 'Open 24 Display St';
+  /* src: url(fonts/ModernDOS9x16.ttf); */
+  src: url('fonts/Open_24_Display_St.ttf')
+}
+
+@font-face {
+  font-family: 'Calculator';
+  /* src: url(fonts/ModernDOS9x16.ttf); */
+  src: url('fonts/Calculator.ttf')
+}
+
+html {
+  min-height: 100%;
+  background-image: url(beautiful-pattern-with-fresh-watermelon-slices-yellow-bright-background-top-view-copy-space.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+body {
+  font-family: 'Calculator', 'Consolas', monospace;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  // height: 100%;
+  width: 100vw;
+
+
+  &__main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  &__footer {
+    // border: 1px solid teal;
+    text-align: center;
+  }
+
+}
+
+
+
+
+
+.calc {
+  max-width: 400px;
+  margin: 0 auto;
+
+
+  border: 1px double black;
+  border-radius: 12px;
+  // box-sizing: content-box;
+
+  padding: 1.0rem;
+
+  background: rgba(255, 255, 255, 0.47);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  // border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 3px double rgba(255, 255, 255, 0.45);
+}
+
+
+
+
+.display {
+
+  background-color: teal;
+  padding: 0.33rem 1rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  // border: 2px double rgba(255, 255, 255, 0.45);
+  border: 3px double rgba(165, 180, 180, 0.85);
+
+  &__minidisplay {
+    padding-bottom: 2px;
+
+    // overflow magic in this two lines (and one line
+    // in the section below):
+    max-width: 100%;
+    display: inline-block;
+
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+
+  &__minidisplay_wrapper {
+    display: flex;
+    flex-direction: row;
+
+    // overflow magic in this lines:
+    float: right;
+  }
+
+
+  &__minidisplay-previous-1 {
+    margin-right: 0.35rem;
+  }
+
+
+  &__minidisplay-operation {
+    margin-right: 0.35rem;
+
+  }
+
+
+  &__minidisplay-previous-2 {
+    margin-right: 0.4rem;
+    
+  }
+  
+  &__minidisplay-result {
+    // margin-right: 0.5rem;
+
+  }
+
+
+
+
+  &__main-input {
+    float: right;
+
+    &_wrapper {
+      font-size: 2rem;
+      // background-color: white;
+      text-align: right;
+      overflow-x: hidden;
+    }
+
+  }
+
+
+}
+
+
+
+
+
+.keyboard {
+  // padding: 1rem 0;
+
+  &__top-section {
+    padding: 1rem 0.75rem 0.6rem;
+  }
+
+  &__bottom-section {
+
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+
+    &_leftpart {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      flex: 0 0 calc(80% - 2px);
+      // order: 2;
+    }
+
+    &_middlepart {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      // background-color: black;
+      width: 100%;
+    }
+
+    // &_rightpart {}
+  }
+
+  &__button-management {
+    width: calc(100% / 4);
+    // background-color: orange !important;
+
+    background: linear-gradient(345deg, rgba(179, 66, 29, 1) 0%, rgba(226, 86, 40, 1) 25%, rgba(226, 86, 40, 1) 80%, rgba(238, 212, 203, 1) 100%);
+  }
+
+  &__button-operations {
+    // flex: 0 0 calc(100% - 3px);
+    width: 80%;
+    flex: 0 0 2rem;
+    background: linear-gradient(345deg, rgb(8, 3, 102) 0%, rgb(30, 30, 168) 25%, rgb(30, 30, 168) 80%, rgb(89, 144, 153) 100%);
+    color: white;
+  }
+
+  &__button-numbers {
+    flex: 0 0 calc(100% / 3 - 3px);
+    height: 2rem;
+    background: linear-gradient(345deg, rgba(2, 0, 36, 1) 0%, rgb(11, 11, 53) 25%, rgb(27, 43, 46) 80%, rgb(54, 98, 105) 100%);
+    color: white;
+  }
+
+  &__button {
+    margin-bottom: 3px;
+    font-family: 'Calculator', 'Consolas', monospace;
+    font-size: 1rem;
+
+    //
+    border: 1px solid rgba(136, 106, 106, 0.8);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    //
+
+    &_button-c {}
+
+    &_button-ce {
+      background: linear-gradient(345deg, rgba(179, 122, 29, 1) 0%, rgba(226, 168, 40, 1) 25%, rgba(226, 186, 40, 1) 80%, rgba(238, 229, 203, 1) 100%);
+    }
+
+    &_button-1 {}
+
+    &_button-2 {}
+
+    &_button-3 {}
+
+    &_button-4 {}
+
+    &_button-5 {}
+
+    &_button-6 {}
+
+    &_button-7 {}
+
+    &_button-8 {}
+
+    &_button-9 {}
+
+    &_button-0 {}
+
+    &_button-dot {}
+
+    &_button-plus {}
+
+    &_button-minus {}
+
+    &_button-multiply {}
+
+    &_button-divide {}
+
+    &_button-equals {
+      font-size: 1.75rem;
+      background: linear-gradient(345deg, rgb(75, 80, 1) 0%, rgb(158, 160, 25) 25%, rgb(158, 160, 25) 80%, rgb(234, 236, 113) 100%);
+    }
+  }
+
+  &__button-wide {}
+
+  &__button-high {}
+
+
+
+
+}
