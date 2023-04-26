@@ -6,66 +6,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="normalize.css" />
+    <!-- <link rel="stylesheet" href="normalize.css" /> -->
     <link rel="stylesheet" href="style.css" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- <div class="content"> -->
-    <div class="calc">
 
-        <div class="display">
-            <div class="minidisplay">
-                <div class="previous-1"></div>
-                <div class="operation"></div>
-                <div class="previous-2"></div>
-                <div class="result"></div>
-                <!-- <div class="equals"></div> -->
-            </div>
-            <div class="output"></div>
+    <div class="wrapper">
+
+        <div class="container container__main">
+            <main>
+                <div class="calc">
+
+                    <div class="display">
+                        <div class="display__minidisplay">
+                            <div class="display__minidisplay_wrapper">
+                                <div class="display__minidisplay-previous-1" id="previous-1"></div>
+                                <div class="display__minidisplay-operation" id="operation"></div>
+                                <div class="display__minidisplay-previous-2" id="previous-2"></div>
+                                <div class="display__minidisplay-result" id="result"></div>
+                                <!-- <div class="equals"></div> -->
+                            </div>
+                        </div>
+                        <div class="display__main-input_wrapper">
+                            <div class="display__main-input" id="output"></div>
+                        </div>
+                    </div>
+
+                    <!-- TODO: move JS code from here to JS script -->
+                    <div class="keyboard" id="keyboard" onmousedown="return false" onselectstart="return false">
+
+                        <div class="keyboard__top-section">
+                            <button
+                                class="keyboard__button keyboard__button-management keyboard__button_button-c">C</button>
+                            <button
+                                class="keyboard__button keyboard__button-management keyboard__button_button-ce">CE</button>
+                        </div>
+
+                        <div class="keyboard__bottom-section">
+                            <div class="keyboard__bottom-section_leftpart">
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-1">1</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-2">2</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-3">3</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-4">4</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-5">5</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-6">6</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-7">7</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-8">8</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-9">9</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button-wide keyboard__button_button-0">0</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-dot">.</button>
+                                <button
+                                    class="keyboard__button keyboard__button-numbers keyboard__button_button-equals">=</button>
+                            </div>
+
+                            <div class="keyboard__bottom-section_middlepart">
+                                <button
+                                    class="keyboard__button keyboard__button-operations keyboard__button_button-plus">+</button>
+                                <button
+                                    class="keyboard__button keyboard__button-operations keyboard__button_button-minus">-</button>
+                                <button
+                                    class="keyboard__button keyboard__button-operations keyboard__button_button-multiply">*</button>
+                                <button
+                                    class="keyboard__button keyboard__button-operations keyboard__button_button-divide">/</button>
+                            </div>
+
+                            <!-- <div class="keyboard__bottom-section_rightpart">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
 
-        <!-- TODO: move JS code from here to JS script -->
-        <div class="keyboard" id="keyboard" onmousedown="return false" onselectstart="return false">
-    
-            <div class="keyboard__top">
-                <button>C</button>
-                <button>CE</button>
-            </div>
-
-            <div class="keyboard__wrapper">
-                <div class="keyboard__left">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button class="button-wide">0</button>
-                    <button>.</button>
-                </div>
-
-                <div class="keyboard__center">
-                    <button>+</button>
-                    <button>-</button>
-                    <button><span style="position: relative; top: 5px;">*</span></button>
-                    <button>/</button>
-                </div>
-
-                <div class="keyboard__right">
-                    <button class="button-high">=</button>
-                </div>
-            </div>
+        <div class="container container__footer">
+            <footer>
+                <span class="freepik"><a
+                        href="https://www.freepik.com/free-photo/beautiful-pattern-with-fresh-watermelon-slices-yellow-bright-background-top-view-copy-space_1160082.htm#page=6&query=ornament%20wallpaper&position=35&from_view=search&track=sph">Image
+                        by valeria_aksakova</a> on Freepik</span> <!-- <div class="content"> -->
+            </footer>
         </div>
+
     </div>
-    </div>
-    <span class="freepik"><a href="https://www.freepik.com/free-photo/beautiful-pattern-with-fresh-watermelon-slices-yellow-bright-background-top-view-copy-space_1160082.htm#page=6&query=ornament%20wallpaper&position=35&from_view=search&track=sph">Image by valeria_aksakova</a> on Freepik</span>
-    <!-- </div> -->
-    <script src="script-4.js"></script>
 </body>
 
 </html>

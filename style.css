@@ -1,15 +1,24 @@
-@font-face {
-  font-family: 'Open 24 Display St';
-  /* src: url(fonts/ModernDOS9x16.ttf); */
-  src: url('fonts/Open_24_Display_St.ttf')
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
-  font-family: 'Calculator';
+  font-family: "Open 24 Display St";
   /* src: url(fonts/ModernDOS9x16.ttf); */
-  src: url('fonts/Calculator.ttf')
+  src: url("fonts/Open_24_Display_St.ttf");
 }
-
+@font-face {
+  font-family: "Calculator";
+  /* src: url(fonts/ModernDOS9x16.ttf); */
+  src: url("fonts/Calculator.ttf");
+}
 html {
   min-height: 100%;
   background-image: url(beautiful-pattern-with-fresh-watermelon-slices-yellow-bright-background-top-view-copy-space.jpg);
@@ -19,230 +28,136 @@ html {
 }
 
 body {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  overflow: hidden;
-  /* border: 1px solid green; */
-  font-family: 'Calculator', 'Consolas', monospace;
-  /* background-color: rgb(15, 56, 14); */
+  font-family: "Calculator", "Consolas", monospace;
+}
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100vw;
+}
+.container__main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.container__footer {
+  text-align: center;
 }
 
 .calc {
-  width: 370px;
-  /* height: 420px; */
+  max-width: 400px;
+  margin: 0 auto;
   border: 1px double black;
   border-radius: 12px;
-  box-sizing: content-box;
-  /* font-family: monospace; */
-  margin: auto;
-  padding: 2rem 1.5rem 0.5rem 1.5rem;
-  /* align-self: center; */
-  /* text-align: center; */
-  /* flex 0 0 auto; */
-  background-color: brown;
-  /* From https://css.glass */
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.47);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-
-
-}
-
-.keyboard {
-  display: flex;
-  /* flex-direction: column; */
-  /* width: 153px; */
-  /* height: 300px; */
-  /* border: 2px solid green; */
-  /* border-radius: 4px; */
-  /* margin: 0 auto; */
-  /* margin-top: 20px; */
-  /* padding: 8px; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* width: 100%; */
-  flex-wrap: wrap;
-}
-
-button {
-  margin: 0;
-  padding: 0;
-  background-color: rgba(236, 195, 195, 0.8);
-  /* border: none; */
-  border: 1px solid rgba(136, 106, 106, 0.8);
-  border-radius: 4px;
-  cursor: pointer;
-  /* background: rgb(2,0,36); */
-
-  font-weight: 400;
-  color: white;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
-}
-
-.keyboard button {
-  font-size: 1.2rem;
-  width: 42px;
-  margin: 6px 2px;
-}
-
-.button-wide {
-  /* padding: 0 72px; */
-  min-width: 6.05rem;
-}
-
-.button-high {
-  min-height: 5rem;
-}
-
-
-.keyboard__top {
-  /* flex: 0 0 600px; */
-  padding: 1rem 0 0.5rem 2.4rem;
-}
-
-.keyboard__top button {
-  height: 1.1rem;
-  font-size: 0.88rem;
-  background: linear-gradient(345deg, rgb(75, 80, 1) 0%, rgb(158, 160, 25) 25%, rgb(158, 160, 25) 80%, rgb(234, 236, 113) 100%);
-}
-
-.keyboard__wrapper {
-  display: flex;
-  /* width: 100%; */
-  margin: 0 auto;
-  /* text-align: center; */
-  /* align-items: center; */
-  justify-content: center;
-  padding: 0 1rem 1.5rem 1rem;
-}
-
-.keyboard__left {
-  /* flex: 0 0 156px; */
-  width: 166px;
-  /* border: 1px solid blue; */
-  text-align: center;
-
-  /* align-items: center; */
-}
-
-.keyboard__left button {
-  background: linear-gradient(345deg, rgba(2, 0, 36, 1) 0%, rgb(11, 11, 53) 25%, rgb(27, 43, 46) 80%, rgb(54, 98, 105) 100%);
-}
-
-.keyboard__center {
-  /* display: grid; */
-  /* flex: 0 0 auto; */
-  width: 80px;
-  text-align: center;
-}
-
-.keyboard__center button {
-  background: linear-gradient(345deg, rgb(8, 3, 102) 0%, rgb(30, 30, 168) 25%, rgb(30, 30, 168) 80%, rgb(89, 144, 153) 100%);
-}
-
-.keyboard__right {
-  /* display: grid; */
-  /* flex: 0 0 auto; */
-  align-items: center;
-  width: 60px;
-  text-align: center;
-  /* vertical-align: bottom; */
-  /* height: 100%; */
-  /* display: table-cell; */
-  /* vertical-align: bottom; */
-  /* min-height: 100%; */
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.keyboard__right button {
-  background: linear-gradient(345deg, rgb(36, 0, 0) 0%, rgb(36, 0, 0) 25%, rgb(56, 15, 15) 80%, rgb(63, 36, 36) 100%);
-  font-size: 2rem;
+  border: 3px double rgba(255, 255, 255, 0.45);
 }
 
 .display {
-  /* width: 200px; */
-  font-size: 0.8rem;
+  background-color: teal;
+  padding: 0.33rem 1rem;
   background: white;
   border-radius: 4px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 3px double rgba(165, 180, 180, 0.85);
 }
-
-.output {
-  /* width: 200px; */
-  /* height: 30px; */
-  /* border: 2px solid black; */
-  /* border-radius: 4px; */
-  /* margin: auto; */
-  /* margin-top: 10px; */
-  text-align: right;
-  /* padding: 8px; */
-  font-size: 2rem;
-  margin: 0 2rem;
+.display__minidisplay {
+  padding-bottom: 2px;
+  max-width: 100%;
+  display: inline-block;
   overflow-x: hidden;
-}
-
-.minidisplay {
-  /* position: relative; */
-  /* top: 28px; */
-  /* left: 8px; */
-  /* display: inline; */
-  display: flex;
-  margin: 0 2rem;
-  padding: 0.25rem;
-  overflow: hidden;
-  /* flex-wrap: nowrap; */
-  /* width: 350px; */
-  /* display: ; */
-
-}
-
-.previous-1,
-.previous-2,
-.operation,
-.result {
-  /* border: 1px solid red; */
-  overflow-x: hidden;
-  padding: 0 0.3rem;
   white-space: nowrap;
-
+}
+.display__minidisplay_wrapper {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.display__minidisplay-previous-1 {
+  margin-right: 0.35rem;
+}
+.display__minidisplay-operation {
+  margin-right: 0.35rem;
+}
+.display__minidisplay-previous-2 {
+  margin-right: 0.4rem;
+}
+.display__main-input {
+  float: right;
+}
+.display__main-input_wrapper {
+  font-size: 2rem;
+  text-align: right;
+  overflow-x: hidden;
 }
 
-.bottom {
-  position: relative;
-  bottom: 0;
+.keyboard__top-section {
+  padding: 1rem 0.75rem 0.6rem;
 }
-
-.freepik {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  word-wrap: none;
-  font-size: 1rem;
-  /* background-color: brown; */
-  /* From https://css.glass */
-  /* background: rgba(0, 0, 0, 0.66); */
-  background: rgba(165, 42, 42, 0.33);
-  border-radius: 2px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  /* border: 1px solid rgba(255, 255, 255, 0.85); */
-  margin: 3px;
-  padding: 6px;
+.keyboard__bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
 }
-
-.freepik,
-.freepik a:link,
-.freepik a:visited,
-.freepik a:hover {
+.keyboard__bottom-section_leftpart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 calc(80% - 2px);
+}
+.keyboard__bottom-section_middlepart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.keyboard__button-management {
+  width: 25%;
+  background: linear-gradient(345deg, rgb(179, 66, 29) 0%, rgb(226, 86, 40) 25%, rgb(226, 86, 40) 80%, rgb(238, 212, 203) 100%);
+}
+.keyboard__button-operations {
+  width: 80%;
+  flex: 0 0 2rem;
+  background: linear-gradient(345deg, rgb(8, 3, 102) 0%, rgb(30, 30, 168) 25%, rgb(30, 30, 168) 80%, rgb(89, 144, 153) 100%);
   color: white;
+}
+.keyboard__button-numbers {
+  flex: 0 0 calc(33.3333333333% - 3px);
+  height: 2rem;
+  background: linear-gradient(345deg, rgb(2, 0, 36) 0%, rgb(11, 11, 53) 25%, rgb(27, 43, 46) 80%, rgb(54, 98, 105) 100%);
+  color: white;
+}
+.keyboard__button {
+  margin-bottom: 3px;
+  font-family: "Calculator", "Consolas", monospace;
+  font-size: 1rem;
+  border: 1px solid rgba(136, 106, 106, 0.8);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+}
+.keyboard__button_button-ce {
+  background: linear-gradient(345deg, rgb(179, 122, 29) 0%, rgb(226, 168, 40) 25%, rgb(226, 186, 40) 80%, rgb(238, 229, 203) 100%);
+}
+.keyboard__button_button-equals {
+  font-size: 1.75rem;
+  background: linear-gradient(345deg, rgb(75, 80, 1) 0%, rgb(158, 160, 25) 25%, rgb(158, 160, 25) 80%, rgb(234, 236, 113) 100%);
 }
